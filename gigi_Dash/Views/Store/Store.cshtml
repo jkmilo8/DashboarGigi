@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "Chart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div id="GaugeChart"></div>
+<div id="GaugeChartFemale"></div>
+<div id="GaugeChartOthers"></div>
+
+<style>
+    .c3-chart-arcs .c3-chart-arcs-gauge-min {
+        fill: black;
+    }
+
+    .c3-chart-arcs .c3-chart-arcs-gauge-max {
+        fill: red;
+    }
+
+    .c3-chart-arc .c3-gauge-value {
+        fill: teal;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Store/GaugeChart",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                successFunc(response);
+            },
+        });
+
+        function successFunc(jsondata) {
+            var chart = c3.generate({
+                bindto: '#GaugeChart',
+                data: {
+                    columns: [
+                        ['Male', jsondata[0].Male]
+                    ],
+                    type: 'gauge',
+                },
+                gauge: {
+                    max: jsondata[0].Total,
+                    label: true
+                },
+                color: {
+                    pattern: ['#F97600'],
+                },
+            });
+
+        }
+    });
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Store/GaugeChart",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                successFunc(response);
+            },
+        });
+
+        function successFunc(jsondata) {
+            var chart = c3.generate({
+                bindto: '#GaugeChartFemale',
+                data: {
+                    columns: [
+                        ['Female', jsondata[0].Female]
+                    ],
+                    type: 'gauge',
+                },
+                gauge: {
+                    max: jsondata[0].Total,
+                    label: true
+                },
+                color: {
+                    pattern: ['#00ecf9'],
+                },
+            });
+
+
+        }
+    });
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Store/GaugeChart",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                successFunc(response);
+            },
+        });
+
+        function successFunc(jsondata) {
+            var chart = c3.generate({
+                bindto: '#GaugeChartOthers',
+                data: {
+                    columns: [
+                        ['Others', jsondata[0].Others]
+                    ],
+                    type: 'gauge',
+                },
+                gauge: {
+                    max: jsondata[0].Total,
+                    label: true
+                },
+                color: {
+                    pattern: ['#e4f900'],
+                },
+            });
+
+        }
+    });
+
+</script>
+
+

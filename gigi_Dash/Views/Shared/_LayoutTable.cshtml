@@ -1,0 +1,105 @@
+﻿<head>
+
+    <title>Production-Sunshine</title>
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.js"></script>
+    <script src="~/assets/js/skins.min.js"></script>
+    <script src="~/assets/js/toastr/toastr.js"></script>
+
+    <script type="text/javascript">
+        var servCulture = '@System.Globalization.CultureInfo.CurrentCulture.Name';
+    </script>
+
+    @Scripts.Render("~/bundles/skin")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!--Beyond Scripts-->
+    @Scripts.Render("~/bundles/beyond")
+
+    <!--Icon-->
+    <link href="~/Content/IMG/logo-picasso.png" rel="shortcut icon" type="image/x-icon" />
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
+          rel="stylesheet" type="text/css">
+    <link href="~/Content/Base.css" rel="stylesheet" />
+
+    <!--Basic Styles-->
+    @Styles.Render("~/css/bootstrap")
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+
+    @Styles.Render("~/css/beyond")
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <style>
+        .bntBig {
+            padding: 20px;
+            font-size: 27px;
+            width: 100%;
+            border-color: black;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        #loading {
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            position: fixed;
+            display: block;
+            opacity: 0.7;
+            background-color: #cecdd4;
+            z-index: 99;
+            text-align: center;
+        }
+
+        #loading-image {
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            z-index: 100;
+        }
+    </style>
+    @RenderSection("PageScripts", required: false)
+    @RenderSection("PageStyle", required: false)
+</head>
+<body>
+    <div id="loading">
+        <img id="loading-image" src="~/Content/IMG/loading-picasso.gif" alt="Loading..." />
+    </div>
+
+
+    <!--  /Loading Container -->
+
+    <div class="page-body">
+        <!-- Your Content Goes Here -->
+        @RenderBody()
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#loading').hide();
+        });
+    </script>
+
+    <script type="text/javascript">
+        var generalError = 0;
+        $(document).ajaxError(function (event, jqXHR, ajaxSettings, thrownError) {
+            $('#loading').hide();
+            if (generalError == 0) {
+                Notify('Error al intentar realizar la operacion', 'top-right', 5000, 'danger', 'fa-times', true);
+                generalError++;
+            }
+        });
+    </script>
+</body>
+

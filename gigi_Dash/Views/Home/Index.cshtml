@@ -1,0 +1,113 @@
+﻿@using gigi_Dash_Common.Public.Model
+@using gigi_Dash_Common.Public.General
+
+@{
+    ViewBag.Title = XML_Messages.GetXmlMessage(0, MODUserLogin.Land);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="jumbotron">
+                    <h1>Bienvenido </h1>
+                    <p>Módulo de gestión de producción.</p>
+                    <hr />
+                    <p>@DateTime.Now.ToString("dd/MM/yyy")</p>
+                    <canvas id="canvas" width="250" height="250"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 text-center">
+                <br />
+                <img id="logo_image" src="~/Content/IMG/logoColor.png" class="img-fluid" alt="Logo Sunshine Bouquet" style="height:200px; width:auto;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <style>
+         @@media screen and (max-width: 768px) {
+            #logo_image {display: none;}
+        }
+    </style>
+ 
+    <script src="https://static.jsbin.com/js/render/edit.js?4.1.7"></script>
+    <script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+
+    <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var color = '#4f4f4f';
+    ctx.strokeStyle = '#4f4f4f';
+    ctx.lineWidth = 10;
+    ctx.lineCap = 'round';
+    ctx.shadowBlur = 1;
+    ctx.shadowColor = '#4f4f4f';
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-1656750-34', 'auto');
+    ga('require', 'linkid', 'linkid.js');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+    function degToRoad(degree)
+    {
+        var factor = Math.PI / 180;
+        return factor * degree;
+    }
+
+    function renderTime()
+    {
+      var now = new Date();
+      var today = now.toDateString();
+      var time = now.toLocaleTimeString();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      var milliseconds = now.getMilliseconds();
+      var newSconds = seconds + (milliseconds / 1000);
+
+      //background
+      var gradient = ctx.createRadialGradient(250,250,1,250,250,300);
+      gradient.addColorStop(0, '#EEEEEE');
+      gradient.addColorStop(1, '#EEEEEE');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 500, 500);
+
+      //hours
+      ctx.beginPath();
+      ctx.arc(125,125,100,degToRoad(270),degToRoad((hours*15)-90));
+      ctx.stroke();
+
+      //minutes
+      ctx.beginPath();
+      ctx.arc(125,125,80,degToRoad(270),degToRoad((minutes*6)-90));
+      ctx.stroke();
+
+      //seconds
+
+      ctx.beginPath();
+      ctx.arc(125, 125, 60, degToRoad(270), degToRoad((newSconds * 6) - 90));
+      ctx.stroke();
+
+      //time
+      ctx.fillStyle = color;
+      ctx.font = '20px Open Sans';
+      ctx.fillText(time,90, 130);
+    }
+
+    setInterval(renderTime, 40);
+    </script>
+
+
+    
+

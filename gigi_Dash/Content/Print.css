@@ -1,0 +1,23 @@
+﻿@media print {
+  
+    .noPrint{
+        display:none;
+    }
+
+    .table{
+        border: 3px solid #000000;
+    }
+
+    .table > tr {
+        border: 3px solid #000000;
+    }
+
+    .table > tr td {
+        border: 3px solid #000000;
+    }
+
+    .table > tr th {
+        border: 3px solid #000000;
+    }
+
+}

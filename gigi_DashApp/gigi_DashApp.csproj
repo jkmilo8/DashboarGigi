@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="c3" Version="0.4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gigi_Dash_Business\gigi_Dash_Business.csproj" />
+    <ProjectReference Include="..\gigi_Dash_Common\gigi_Dash_Common.csproj" />
+  </ItemGroup>
+
+</Project>

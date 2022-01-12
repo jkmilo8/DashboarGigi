@@ -1,0 +1,307 @@
+﻿/*#region CheckBox and RadioBox*/
+td.dxpgFilterItem_Material {
+    padding: 2px;
+}
+
+    td.dxpgFilterItem_Material input[type=checkbox],
+    td.dxpgFilterItem_Material input[type=radio] {
+        opacity: 0;
+        position: absolute;
+        left: -9999px;
+        z-index: 12;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+        td.dxpgFilterItem_Material input[type=checkbox].inverted:checked ~ label:before,
+        td.dxpgFilterItem_Material input[type=radio].inverted:checked ~ label:before {
+            background-color: #333333;
+            border-color: #333333;
+            color: #ffffff;
+        }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-white ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-white ~ label {
+            color: #ffffff;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-white ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-white ~ label:before {
+                border-color: #fafafa;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-white:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-white:checked ~ label {
+            color: #ffffff;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-white:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-white:checked ~ label:before {
+                border-color: #333333;
+                color: #333333;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-blue:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-blue:checked ~ label {
+            color: #5db2ff;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-blue:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-blue:checked ~ label:before {
+                border-color: #5db2ff;
+                color: #5db2ff;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-primary:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-primary:checked ~ label {
+            color: #4374e0;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-primary:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-primary:checked ~ label:before {
+                border-color: #4374e0;
+                color: #4374e0;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-danger:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-danger:checked ~ label {
+            color: #d73d32;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-danger:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-danger:checked ~ label:before {
+                border-color: #d73d32;
+                color: #d73d32;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-success:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-success:checked ~ label {
+            color: #53a93f;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-success:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-success:checked ~ label:before {
+                border-color: #53a93f;
+                color: #53a93f;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-warning:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-warning:checked ~ label {
+            color: #f4b400;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-warning:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-warning:checked ~ label:before {
+                border-color: #f4b400;
+                color: #f4b400;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-silver:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-silver:checked ~ label {
+            color: #777777;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-silver:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-silver:checked ~ label:before {
+                border-color: #777777;
+                color: #777777;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-blueberry:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-blueberry:checked ~ label {
+            color: #6f85bf;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-blueberry:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-blueberry:checked ~ label:before {
+                border-color: #6f85bf;
+                color: #6f85bf;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-palegreen:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-palegreen:checked ~ label {
+            color: #a0d468;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-palegreen:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-palegreen:checked ~ label:before {
+                border-color: #a0d468;
+                color: #a0d468;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-orange:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-orange:checked ~ label {
+            color: #fb6e52;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-orange:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-orange:checked ~ label:before {
+                border-color: #fb6e52;
+                color: #fb6e52;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-darkorange:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-darkorange:checked ~ label {
+            color: #ed4e2a;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-darkorange:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-darkorange:checked ~ label:before {
+                border-color: #ed4e2a;
+                color: #ed4e2a;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-magenta:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-magenta:checked ~ label {
+            color: #bc5679;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-magenta:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-magenta:checked ~ label:before {
+                border-color: #bc5679;
+                color: #bc5679;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-purple:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-purple:checked ~ label {
+            color: #7e3794;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-purple:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-purple:checked ~ label:before {
+                border-color: #7e3794;
+                color: #7e3794;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox].colored-maroon:checked ~ label,
+        td.dxpgFilterItem_Material input[type=radio].colored-maroon:checked ~ label {
+            color: #981b48;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox].colored-maroon:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].colored-maroon:checked ~ label:before {
+                border-color: #981b48;
+                color: #981b48;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox]:checked,
+        td.dxpgFilterItem_Material input[type=radio]:checked,
+        td.dxpgFilterItem_Material input[type=checkbox]:focus,
+        td.dxpgFilterItem_Material input[type=radio]:focus {
+            outline: none !important;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox]:checked ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio]:checked ~ label:before {
+                display: inline-block;
+                content: '\f00c';
+                background-color: #f5f8fc;
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+                -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+                border-color: #333333;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox]:hover ~ label :before,
+        td.dxpgFilterItem_Material input[type=radio]:hover ~ label :before {
+            border-color: #737373;
+        }
+
+        td.dxpgFilterItem_Material input[type=checkbox]:active ~ label :before,
+        td.dxpgFilterItem_Material input[type=radio]:active ~ label :before {
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        td.dxpgFilterItem_Material input[type=checkbox]:disabled ~ label,
+        td.dxpgFilterItem_Material input[type=radio]:disabled ~ label,
+        td.dxpgFilterItem_Material input[type=checkbox][disabled] ~ label,
+        td.dxpgFilterItem_Material input[type=radio][disabled] ~ label,
+        td.dxpgFilterItem_Material input[type=checkbox].disabled ~ label,
+        td.dxpgFilterItem_Material input[type=radio].disabled ~ label {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox]:disabled ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio]:disabled ~ label:before,
+            td.dxpgFilterItem_Material input[type=checkbox][disabled] ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio][disabled] ~ label:before,
+            td.dxpgFilterItem_Material input[type=checkbox].disabled ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio].disabled ~ label:before {
+                background-color: #f5f5f5 !important;
+                border-color: #e5e5e5 !important;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                box-shadow: none !important;
+                color: #e5e5e5;
+            }
+
+        td.dxpgFilterItem_Material input[type=checkbox] ~ label,
+        td.dxpgFilterItem_Material input[type=radio] ~ label {
+            position: relative;
+            z-index: 11;
+            display: inline-block;
+            margin: 0;
+            line-height: 20px;
+            min-height: 18px;
+            min-width: 18px;
+            font-weight: normal;
+        }
+
+            td.dxpgFilterItem_Material input[type=checkbox] ~ label:before,
+            td.dxpgFilterItem_Material input[type=radio] ~ label:before {
+                font-family: fontAwesome;
+                font-weight: bold;
+                font-size: 13px;
+                color: #333333;
+                content: "\a0";
+                background-color: #fafafa;
+                border: 1px solid #c8c8c8;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                border-radius: 0;
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                height: 18px;
+                line-height: 16px;
+                min-width: 18px;
+                margin-right: 5px;
+                margin-bottom: 2px;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+            }
+
+            td.dxpgFilterItem_Material input[type=checkbox] ~ label:hover:before,
+            td.dxpgFilterItem_Material input[type=radio] ~ label:hover:before {
+                border-color: #737373;
+            }
+
+            td.dxpgFilterItem_Material input[type=checkbox] ~ label:active:before,
+            td.dxpgFilterItem_Material input[type=radio] ~ label:active:before {
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+            td.dxpgFilterItem_Material input[type=radio] ~ label:before {
+                border-radius: 100%;
+                font-size: 10px;
+                font-family: FontAwesome;
+                line-height: 17px;
+                height: 19px;
+                min-width: 19px;
+            }
+
+        td.dxpgFilterItem_Material input[type=radio]:checked ~ label:before {
+            content: "\f111";
+        }
+
+.radio label,
+.checkbox label {
+    padding-left: 0;
+}
+/*#endregion CheckBox and RadioBox*/

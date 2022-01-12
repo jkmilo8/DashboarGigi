@@ -1,0 +1,486 @@
+﻿@using System
+@using BeyondThemes.Bootstrap;
+@using gigi_Dash_Common.Public.General;
+@using gigi_Dash_Common.Public.Model;
+
+
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.6
+Version: 1.6.0
+Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB06R48S4
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="@ViewBag.Description" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/IMG/logo-picasso.png" rel="shortcut icon" type="image/x-icon" />
+
+    <!--Basic Styles-->
+    @Styles.Render("~/css/bootstrap")
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
+          rel="stylesheet" type="text/css">
+    <link href="~/Content/Base.css" rel="stylesheet" />
+    <!--Beyond styles-->
+    @Styles.Render("~/css/beyond")
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    @Scripts.Render("~/bundles/skin")
+    @Html.MvcSiteMap().CanonicalTag()
+
+    @RenderSection("PageStyle", required: false)
+    
+    <script type="text/javascript">
+        var servCulture = '@System.Globalization.CultureInfo.CurrentCulture.Name';
+    </script>
+	@Styles.Render("~/Content/DevExtremeBundle")
+	
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/Scripts/DevExtremeBundle")
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <div id="loading">
+        <img id="loading-image" src="~/Content/IMG/loading-picasso.gif" alt="Loading..." />
+    </div>
+
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <img src="~/Content/IMG/logo-picasso.png" alt="" style="height:40px; width:40px;" />
+                        </small> Operaciones
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            <li>
+
+                                <!--Tasks Dropdown-->
+                                <!--/Tasks Dropdown-->
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="~/Content/IMG/defaultUser.svg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>@MODUserLogin.Name</span></span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>@MODUserLogin.Name</a></li>
+                                    <li class="email"><a>@MODUserLogin.Email</a></li>
+                                    <!--Avatar Area-->
+                                    <li>
+                                        <div class="avatar-area">
+                                            <img src="~/Content/IMG/defaultUser.svg" class="avatar">
+                                        </div>
+                                    </li>
+                                    <!--Avatar Area-->
+                                    <li class="edit">
+                                        <a href="#" class="pull-left" onclick="GetPerfil();">@XML_Messages.GetXmlMessage(9, MODUserLogin.Land)</a>
+                                        <a href="#" class="pull-right" data-toggle="modal" data-target="#myModal">@XML_Messages.GetXmlMessage(10, MODUserLogin.Land)</a>
+                                    </li>
+                                    <!--Theme Selector Area-->
+                                    <li class="theme-area">
+                                        <ul class="colorpicker" id="skin-changer">
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="~/assets/css/skins/blue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="~/assets/css/skins/azure.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="~/assets/css/skins/teal.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#53a93f;" rel="~/assets/css/skins/green.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#FF8F32;" rel="~/assets/css/skins/orange.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#cc324b;" rel="~/assets/css/skins/pink.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#AC193D;" rel="~/assets/css/skins/darkred.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#8C0095;" rel="~/assets/css/skins/purple.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#0072C6;" rel="~/assets/css/skins/darkblue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#585858;" rel="~/assets/css/skins/gray.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#474544;" rel="~/assets/css/skins/black.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#001940;" rel="~/assets/css/skins/deepblue.min.css"></a></li>
+                                        </ul>
+                                    </li>
+                                    <!--/Theme Selector Area-->
+                                    <li class="dropdown-footer">
+                                        <a href="@Url.Action("Unlogin", "Home")">
+                                            Menú Principal
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                            <!--Note: notice that setting div must start right after account area list.
+                            no space must be between these elements-->
+                            <!-- Settings -->
+                        </ul><div class="setting">
+                            <a id="btn-setting" title="Setting" href="#">
+                                <i class="icon glyphicon glyphicon-cog"></i>
+                            </a>
+                        </div><div class="setting-container">
+                            <label>
+                                <input type="checkbox" id="checkbox_fixednavbar">
+                                <span class="text">Fixed Navbar</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedsidebar">
+                                <span class="text">Fixed SideBar</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedbreadcrumbs">
+                                <span class="text">Fixed BreadCrumbs</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="checkbox_fixedheader">
+                                <span class="text">Fixed Header</span>
+                            </label>
+                        </div>
+                        <!-- Settings -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">@XML_Messages.GetXmlMessage(3012, MODUserLogin.Land)</h4>
+                </div>
+                <div class="modal-body">
+                    <h3 class="modal-title">@XML_Messages.GetXmlMessage(3011, MODUserLogin.Land)</h3>
+                    <select id="lFarmsDefault" name="lFarmsDefault" class="form-control" style="width:200px"></select>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" onclick="return SetUserBasicParameters();" value="@XML_Messages.GetXmlMessage(13, MODUserLogin.Land)" class="btn shiny btn-success"
+                           data-container="body"
+                           data-class="dark"
+                           data-content="@XML_Messages.GetXmlMessage(6003, MODUserLogin.Land)"
+                           data-toggle="popover-hover"
+                           data-placement="top" />
+
+                    <input type="button" class="btn shiny btn-danger" data-dismiss="modal" value="@XML_Messages.GetXmlMessage(5, MODUserLogin.Land)"
+                           data-container="body"
+                           data-class="dark"
+                           data-content="@XML_Messages.GetXmlMessage(6000, MODUserLogin.Land)"
+                           data-toggle="popover-hover"
+                           data-placement="top" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myPerfil" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content" id="bodyPerfil">
+
+            </div>
+        </div>
+    </div>
+    <style>
+        #loading {
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            position: fixed;
+            display: block;
+            opacity: 0.7;
+            background-color: #cecdd4;
+            z-index: 99;
+            text-align: center;
+        }
+
+        #loading-image {
+            position: absolute;
+            top: 35%;
+            left: 48%;
+            z-index: 100;
+        }
+    </style>
+
+
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                @*<div class="sidebar-header-wrapper">
+                <input type="text" class="searchinput" />
+                <i class="searchicon fa fa-search"></i>
+                <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+            </div>*@
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                @{ var sm = Html.MvcSiteMap();            }
+                @*@sm.Menu()*@
+                <ul class="nav sidebar-menu">
+                    @Html.Partial("_MenuBar")
+                </ul>
+
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                @*<div class="page-breadcrumbs">
+                        @sm.SiteMapPath()
+                    </div>*@
+                <!-- /Page Breadcrumb -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    @sm.SiteMapTitle()
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                        <a class="help" id="help-toggler" href="@Url.Action("Help","Home")">
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <!-- Your Content Goes Here -->
+                    @RenderBody()
+                </div>
+                <!-- /Page Body -->
+                <!-- Page Footer -->
+                <div class="page-footer">
+                    <div class="footer-copyright">
+                        @RenderSection("footerInfo", required: false)
+                    </div>
+
+                </div>
+                <!-- /Page Footer -->
+
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+    <!--Basic Scripts-->
+
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <!--Beyond Scripts-->
+    @Scripts.Render("~/bundles/beyond")
+
+    <script src="~/assets/js/bootbox/bootbox.js"></script>
+    <script src="~/assets/js/select2/select2.js"></script>
+    <!--Page Related Scripts-->
+    @RenderSection("PageScripts", required: false)
+
+
+    <script>
+        $(document).ready(function () {
+            if ('@TempData["_msgType"]' != '') {
+                var _id = "#modal-" + "@TempData["_msgType"]";
+                $(_id).modal('show')
+            }
+            $("select.select-withsearch").select2({});
+            $('#loading').hide();
+        });
+
+        function GetPerfil() {
+            $.ajax({
+                url: '@Url.Action("GetPerfil", "Home", new { })',
+                type: "GET",
+                success: function (record) {
+                    $('#bodyPerfil').html(record);
+                    $("#myPerfil").modal('show');
+                }
+            });
+
+
+        }
+
+
+
+        function LoadFarmsAllowed() {
+            $.ajax({
+                url: '@Url.Action("GetFarmsAllowed", "Home", new { })',
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: {},
+                success: function (msg) {
+                    $("#lFarmsDefault").empty();
+                    var opt = $(document.createElement('option'));
+                    opt.text("Seleccione..");
+                    opt.val("0");
+                    $("#lFarmsDefault").append(opt);
+                    $(msg).each(function () {
+                        var option = $(document.createElement('option'));
+                        option.text(this.Farm);
+                        option.val(this.idFarm);
+                        if (this.selected == this.idFarm)
+                        {
+                            option.attr("selected", "selected");
+                            $("#select2-lFarmsDefault-container").text(this.Farm);
+                        }
+                        $("#lFarmsDefault").append(option);
+                    });
+                }
+            });
+        }
+
+        function SetUserBasicParameters() {
+            var _farmId = $("#lFarmsDefault").val();
+            $.ajax({
+                url: '@Url.Action("SetUserBasicParameters", "Home", new { })',
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: { farmId: _farmId },
+                success: function (msg) {
+                    $('#myModal').modal('toggle');
+                    Notify('@XML_Messages.GetXmlMessage(2001, MODUserLogin.Land)', 'top-right', '5000', 'success', 'fa-list', true);
+                    location.reload();
+                }
+            });
+        }
+
+
+
+    </script>
+
+    <!--Success Modal Templates-->
+    @using (var modal = Html.Bootstrap().Begin(new Modal().Id("modal-success").Fade().HtmlAttributes(new { @class = "modal-message modal-success" })))
+    {
+        using (var header = modal.BeginHeader())
+        {
+            <i class="glyphicon glyphicon-check"></i>
+        }
+        using (var body = modal.BeginBody())
+        {
+            <text> @TempData["_msg"] </text>
+        }
+        using (var footer = modal.BeginFooter())
+        {
+            @Html.Bootstrap().Button().Text("Ok").Color(BootstrapColors.Success).HtmlAttributes(new { data_dismiss = "modal" })
+        }
+    }
+    <!--End Success Modal Templates-->
+    <!--Info Modal Templates-->
+    @using (var modal = Html.Bootstrap().Begin(new Modal().Id("modal-info").Fade().HtmlAttributes(new { @class = "modal-message modal-info" })))
+    {
+        using (var header = modal.BeginHeader())
+        {
+            <i class="fa fa-envelope"></i>
+        }
+        using (var body = modal.BeginBody())
+        {
+            <text> @TempData["_msg"] </text>
+        }
+        using (var footer = modal.BeginFooter())
+        {
+            @Html.Bootstrap().Button().Text("Ok").Color(BootstrapColors.Info).HtmlAttributes(new { data_dismiss = "modal" })
+        }
+    }
+    <!--End Info Modal Templates-->
+    <!--Danger Modal Templates-->
+    @using (var modal = Html.Bootstrap().Begin(new Modal().Id("modal-danger").Fade().HtmlAttributes(new { @class = "modal-message modal-danger" })))
+    {
+        using (var header = modal.BeginHeader())
+        {
+            <i class="glyphicon glyphicon-fire"></i>
+        }
+        using (var body = modal.BeginBody())
+        {
+            <text> @TempData["_msg"] </text>
+        }
+        using (var footer = modal.BeginFooter())
+        {
+            @Html.Bootstrap().Button().Text("Ok").Color(BootstrapColors.Danger).HtmlAttributes(new { data_dismiss = "modal" })
+        }
+    }
+    <!--End Danger Modal Templates-->
+    <!--Warning Modal Templates-->
+    @using (var modal = Html.Bootstrap().Begin(new Modal().Id("modal-warning").Fade().HtmlAttributes(new { @class = "modal-message modal-warning" })))
+    {
+        using (var header = modal.BeginHeader())
+        {
+            <i class="fa fa-warning"></i>
+        }
+        using (var body = modal.BeginBody())
+        {
+            <text> @TempData["_msg"] </text>
+        }
+        using (var footer = modal.BeginFooter())
+        {
+            @Html.Bootstrap().Button().Text("Ok").Color(BootstrapColors.Warning).HtmlAttributes(new { data_dismiss = "modal" })
+        }
+    }
+    <!--End Warning Modal Templates-->
+
+    <script src="~/assets/js/toastr/toastr.js"></script>
+    <script type="text/javascript">
+        var generalError = 0;
+        $(document).ajaxError(function (event, jqXHR, ajaxSettings, thrownError) {
+            $('#loading').hide();
+            if (generalError == 0) {
+                Notify('Error al intentar realizar la operacion', 'top-right', 5000, 'danger', 'fa-times', true);
+                generalError++;
+            }
+        });
+    </script>
+
+</body>
+<!--  /Body -->
+</html>

@@ -1,0 +1,40 @@
+﻿@using gigi_Dash_Common.Public.Model;
+
+<!--UI Elements-->
+
+@foreach (MODMenuBE item in MODUserLogin.Menus.FindAll(x => x.FatherId == null))
+{
+    if (MODUserLogin.Menus.Any(x => x.FatherId == item.Id))
+    {
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon @item.Icon"></i>
+                <span class="menu-text"> @item.Name</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                @foreach (MODMenuBE itemChild in MODUserLogin.Menus)
+                    {
+                        if (itemChild.FatherId == item.Id)
+                        {
+                        <li>
+                            <a href="@Url.Action(itemChild.Action,itemChild.Controller)" onclick=" $('#loading').show();">
+                                <i class="menu-icon @itemChild.Icon"></i>
+                                <span class="menu-text">@itemChild.Name</span>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a href="@Url.Action(item.Action,item.Controller)" onclick=" $('#loading').show();">
+                <i class="menu-icon @item.Icon"></i>
+                <span class="menu-text"> @item.Name </span>
+            </a>
+        </li>
+    }
+}

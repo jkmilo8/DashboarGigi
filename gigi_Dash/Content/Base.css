@@ -1,0 +1,155 @@
+﻿.footer-copyright p{
+    display:inline-block;
+    margin-left:3px;
+    margin-right:4px;
+}
+.footer-copyright p label{
+    font-weight:bold;
+}
+
+.colCheck{
+    width:45px;
+}
+
+.RecapsFilter li{
+    display:inline-block;
+}
+
+.form-btns > .btn{
+    float:right;
+    margin-left:10px;
+}
+
+.form-filter-fields div.form-fields-round:not(:first-child){
+    margin-left:5px; 
+}
+
+.form-fields-round-12, .form-fields-round-10, .form-fields-round-8, .form-fields-round-6,
+.form-fields-round-4, .form-fields-round-3, .form-fields-round-2 {
+
+}
+
+.form-fields-round-12 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:8%;
+}
+
+.form-fields-round-10 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:10%;
+}
+
+.form-fields-round-8 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:12%;
+}
+
+.form-fields-round-6 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:16%;
+}
+
+.form-fields-round-4 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:25%;
+}
+
+.form-fields-round-3 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:33%;
+}
+
+.form-fields-round-2 {
+    display:inline-block;
+    padding: 4px;
+    border: 1px solid #b0acac; 
+    border-radius:6px;
+    width:50%;
+}
+
+.form-fields-round-2 :first-child,
+.form-fields-round-3 :first-child,
+.form-fields-round-4 :first-child,
+.form-fields-round-6 :first-child,
+.form-fields-round-8 :first-child,
+.form-fields-round-10 :first-child,
+.form-fields-round-12 :first-child {
+    font-weight:bold;
+    display:inline-grid;
+    width:27%;
+    text-align:center;
+}
+
+.form-fields-round-2 :last-child,
+.form-fields-round-3 :last-child,
+.form-fields-round-4 :last-child,
+.form-fields-round-6 :last-child,
+.form-fields-round-8 :last-child,
+.form-fields-round-10 :last-child,
+.form-fields-round-12 :last-child {
+    margin-right:1%;
+    width:66%;
+    display:inline;
+}
+
+.form-filter-button {
+    margin-top:5px;
+    text-align:right;
+}
+
+.Money.en::before {
+    content:"USD $";
+}
+
+.Money.es::before {
+    content:"COP $";
+}
+.negMoney {
+    color:red;
+}
+div.negMoney.en::before {
+    content:'USD ($';
+}
+div.negMoney.es::before {
+    content:'COP ($';
+}
+div.negMoney::after {
+    content:')';
+}
+.dataTables_paginate {
+    padding-right:1px;
+}
+.dataTables_paginate ul.pagination{
+    float:right;
+}
+
+.form-filter-fields .read-only{
+    display:inline-block;
+    padding:7px;
+    font-weight:bold;
+}
+
+.GiroUSD :first-child {
+    width:38%;
+}
+.GiroUSD :last-child {
+    width:60%;
+}

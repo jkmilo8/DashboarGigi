@@ -1,0 +1,126 @@
+﻿body {
+}
+
+.input-Filter {
+    min-width: 200px;
+}
+
+.btn {
+    min-width: 100px;
+}
+
+.panel {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /*max-width: 200px;*/
+    /*margin: auto;*/
+    text-align: center;    
+    /*src: url('put_the_location_to_your_font.ttf or .otf');*/
+    font-family: arial;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: deepskyblue;
+    border-radius: 5px;
+    display: inline-grid;
+    width: 250px;
+    /*height: 150px;*/
+}
+
+
+.number {
+    color: white;
+    font-size: 28px;
+    font-family: 'Orbitron';
+}
+
+.title {
+    color: white;
+    font-size: 18px;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    padding: 0;
+    margin: 0;   
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    opacity: 0.1;
+    background-color: rgba(193,66,66,0.1);
+    z-index: -999;
+}
+
+.greenBack {
+    padding: 10px;
+    background-color: deepskyblue;
+    color: white;
+    border-color: deepskyblue;
+}
+
+
+.fontGoods {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+}
+
+
+table.dataTable thead {
+    padding: 3px 10px;
+    width: 1px;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+table.dataTable td {
+    padding: 3px 10px;
+    width: 1px;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+table {
+    width: 100% !important;
+}
+
+
+tr td.details-control {
+    background: url('images/tree-icons.png') no-repeat;
+    background-position: 50% 8px;
+    content: "";
+    cursor: pointer;
+}
+
+td .form-control {
+    font-size: 11px !important;
+    height: auto;
+}
+
+tr.details td.details-control {    
+    background: url('images/tree-icons.png') no-repeat;
+    background-position: 50% -64px;
+    content: "";
+    cursor: pointer;
+}
+
+.tfoot {
+    font-weight: bolder !important;
+    font-size: large;
+}
+
+.modal-dialog-link {
+    width: 1000px !important;
+}
